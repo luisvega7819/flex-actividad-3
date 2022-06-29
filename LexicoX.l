@@ -58,3 +58,46 @@ INTEGER         "INTEGER"|"Integer"
 FLOAT           "Float"|"FLOAT"
 WRITE           "write"|"WRITE"
 
+%%
+{OP_DOSPUNTOS}          {printf("\nOP_DOSPUNTOS (%s)", yytext);}
+{FIN_SENTENCIA}         {printf("\nFIN_SENTENCIA (%s)", yytext);}
+{CHAR_COMA}             {printf("\nCHAR_COMA (%s)", yytext);}
+{CHAR_PUNTOYCOMA}       {printf("\nCHAR_PUNTOYCOMA (%s)", yytext);}
+{CONST_INTEGER}         { fn_verificarRango(yytex); printf("\nCONST_INTEGER (%s)", yytext);}
+{CONST_FLOAT}           {printf("\nCONST_FLOAT (%s)", yytext);}
+{CONST_CADENA}          {printf("\nCONST_CADENA (%s)", yytext);}
+
+{FIN_SENTENCIA}         {printf("\nFIN_SENTENCIA (%s)", yytext);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.       yyerror(); /*Si llega aqui es porque no ha encontrado token que hace match con los match*/
+%%
+
+int main (int argc, char *argv[]){
+    /*Abro el archivo en modo lectura y dejo apuntando el puntero yyvin que nos pide FLEX alli.*/
+    if((yyin = fopen(argv[1], "rt")) ==  NULL){
+        printf("\nNo se puede abrir el archivo: %s\n", argv[1]);
+        return 1;
+    } 
+    else{
+        printf("\nEl archivo %s se abrio correctamente\n", argv[1]);
+        yylex();
+    }
+    printf("\nFLEX finalizo la lectura del archivo %s \n", argv[1]);
+    fclose(yyin);
+    return 0;
+}
