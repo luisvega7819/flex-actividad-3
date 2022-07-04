@@ -3,10 +3,13 @@
 #include <stdlib.h>
 #include <conio.h>
 #include <string.h>
-
+FILE *yyin;
 %}
+
 /* Sección de opciones */
+/* Esto indica a FLEX que lea sólo un fichero de entrada */
 %option noyywrap
+/* Nos permite obtener el numero de linea */
 %option yylineno
 
 /* Seccion Tokens */
@@ -24,6 +27,7 @@ CHAR_DOSPUNTOS  [":"]
 IDENTIFICADOR   {LETRA}({LETRA}|{DIGITO}|{GUIONES})*
 CONST_INTEGER   (-?[1-9][0-9]{0,4})|0
 CONST_FLOAT     {DIGITO}{0,8}{CHAR_PUNTO}{DIGITO}{1,8}
+/* La regex de abajo considera string a todo lo que este dentro de comillas dobles excepto el caracter de fin de linea y la propia comilla doble. */
 CONST_CADENA    \"[^\n]*\"
 
 /* Operadores lógicos y operadores aritméticos básicos */
@@ -95,6 +99,7 @@ WRITE           "write"|"WRITE"
 {DECVAR}                    {printf("\nPalabra Reservada DECVAR: (%s)", yytext);}
 {ENDDEC}                    {printf("\nPalabra Reservada DECVAR: (%s)", yytext);}
 {FLOAT}                     {printf("\nPalabra Reservada DECVAR: (%s)", yytext);}
+{INTEGER}                   {printf("\nPalabra Reservada INTEGER: (%s)", yytext);}
 
 {IDENTIFICADOR}             {printf("\nIDENTIFICADOR: (%s)", yytext);}
 
