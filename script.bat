@@ -1,6 +1,6 @@
 @echo off
 c:\GnuWin32\bin\flex LexicoX.l
-echo "Flex ha compilado la especificacion lexica del archivo Lexico1.l (Se crea un archivo lex.yy.c)"
+echo "Flex ha compilado la especificacion lexica del archivo LexicoX.l (Se crea un archivo lex.yy.c)"
 pause
 c:\MinGW\bin\gcc.exe lex.yy.c -o Compilado.exe
 echo "Finalizado la ejecución del compilador de C sobre el archivo lex.yy.c (Se creo un archivo Compilado.exe)"
