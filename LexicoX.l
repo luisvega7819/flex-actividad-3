@@ -68,7 +68,7 @@ WRITE           "write"|"WRITE"
 {FIN_SENTENCIA}             {printf("\nFIN_SENTENCIA (%s)", yytext);}
 {CHAR_COMA}                 {printf("\nCHAR_COMA (%s)", yytext);}
 {CHAR_PUNTOYCOMA}           {printf("\nCHAR_PUNTOYCOMA (%s)", yytext);}
-{CONST_INTEGER}             { fn_verificarRango(yytex); printf("\nCONST_INTEGER (%s)", yytext);}
+{CONST_INTEGER}             { fn_verificarRango(yytext); printf("\nCONST_INTEGER (%s)", yytext);}
 {CONST_FLOAT}               {printf("\nCONST_FLOAT (%s)", yytext);}
 {CONST_CADENA}              {printf("\nCONST_CADENA (%s)", yytext);}
 
