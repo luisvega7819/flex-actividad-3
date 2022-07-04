@@ -101,7 +101,7 @@ WRITE           "write"|"WRITE"
 {FLOAT}                     {printf("\nPalabra Reservada DECVAR: (%s)", yytext);}
 {INTEGER}                   {printf("\nPalabra Reservada INTEGER: (%s)", yytext);}
 
-{IDENTIFICADOR}             {printf("\nIDENTIFICADOR: (%s)", yytext);}
+{IDENTIFICADOR}             {printf("\nIDENTIFICADOR (%s)", yytext);}
 
 "\n"
 "\t"
