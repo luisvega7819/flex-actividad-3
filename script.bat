@@ -1,5 +1,5 @@
 @echo off
-C:\Program Files (x86)\GnuWin32\bin\flex LexicoX.l
+"C:\Program Files (x86)\GnuWin32\bin\flex" LexicoX.l
 echo "Flex ha compilado la especificacion lexica del archivo LexicoX.l (Se crea un archivo lex.yy.c)"
 pause
 c:\MinGW\bin\gcc.exe lex.yy.c -o Compilado.exe
