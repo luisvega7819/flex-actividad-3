@@ -97,8 +97,8 @@ WRITE           "write"|"WRITE"
 {FLOAT}                     {printf("\nPalabra Reservada FLOAT: (%s)", yytext);}
 {WRITE}                     {printf("\nPalabra Reservada WRITE: (%s)", yytext);}
 {DECVAR}                    {printf("\nPalabra Reservada DECVAR: (%s)", yytext);}
-{ENDDEC}                    {printf("\nPalabra Reservada DECVAR: (%s)", yytext);}
-{FLOAT}                     {printf("\nPalabra Reservada DECVAR: (%s)", yytext);}
+{ENDDEC}                    {printf("\nPalabra Reservada ENDDEC: (%s)", yytext);}
+{FLOAT}                     {printf("\nPalabra Reservada FLOAT: (%s)", yytext);}
 {INTEGER}                   {printf("\nPalabra Reservada INTEGER: (%s)", yytext);}
 
 {IDENTIFICADOR}             {printf("\nIDENTIFICADOR (%s)", yytext);}
