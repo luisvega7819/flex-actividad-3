@@ -16,8 +16,8 @@ FILE *yyin;
 DIGITO          [0-9]
 LETRA           [a-zA-Z]
 ESPACIO         [" "]
-INI_COMENTARIO  ["*/"]
-FIN_COMENTARIO  ["/*"]
+INI_COMENTARIO  ["/*"]
+FIN_COMENTARIO  ["*/"]
 GUIONES         [-_]
 CHAR_COMA       [","]
 CHAR_PUNTO      ["."]
@@ -28,7 +28,7 @@ IDENTIFICADOR   {LETRA}({LETRA}|{DIGITO}|{GUIONES})*
 CONST_INTEGER   (-?[1-9][0-9]{0,4})|0
 CONST_FLOAT     {DIGITO}{0,8}{CHAR_PUNTO}{DIGITO}{1,8}
 /* La regex de abajo considera string a todo lo que este dentro de comillas dobles excepto el caracter de fin de linea y la propia comilla doble. */
-CONST_CADENA    \"[^\n]*\"
+CONST_CADENA    \"[^\n"]*\"
 
 /* Operadores lógicos y operadores aritméticos básicos */
 OP_SUMA         ["+"]
@@ -39,7 +39,7 @@ OP_IGUAL        ["="]
 OP_MAYOR        [">"]
 OP_MENOR        ["<"]
 OP_MAYORIGUAL    ">="
-OP_MENORIGUAL    "=<"
+OP_MENORIGUAL    "<="
 OP_COMP_IGUAL    "=="
 OP_NEGACION      "!"
 OP_DISTINTO      "!="
